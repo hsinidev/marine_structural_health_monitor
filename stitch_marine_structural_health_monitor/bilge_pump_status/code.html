@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#e3e2e2",
+                    "on-primary": "#5a1c00",
+                    "outline-variant": "#5b4137",
+                    "tertiary-container": "#949494",
+                    "on-tertiary-fixed": "#1b1b1b",
+                    "surface-tint": "#ffb599",
+                    "primary": "#ffb599",
+                    "surface-dim": "#121414",
+                    "inverse-primary": "#a63b00",
+                    "surface-container": "#1e2020",
+                    "on-primary-fixed": "#370e00",
+                    "tertiary-fixed": "#e2e2e2",
+                    "surface-container-lowest": "#0d0e0f",
+                    "on-tertiary": "#303030",
+                    "on-secondary-container": "#b6b5b4",
+                    "on-tertiary-container": "#2d2d2d",
+                    "primary-container": "#ff5f00",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "on-secondary-fixed-variant": "#474746",
+                    "outline": "#ab8a7d",
+                    "surface-container-low": "#1a1c1c",
+                    "primary-fixed-dim": "#ffb599",
+                    "surface": "#121414",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "error": "#ffb4ab",
+                    "surface-container-high": "#292a2a",
+                    "secondary-container": "#474746",
+                    "on-primary-container": "#531a00",
+                    "surface-container-highest": "#343535",
+                    "on-secondary": "#303030",
+                    "inverse-surface": "#e3e2e2",
+                    "error-container": "#93000a",
+                    "on-surface": "#e3e2e2",
+                    "on-error-container": "#ffdad6",
+                    "surface-variant": "#343535",
+                    "on-surface-variant": "#e4bfb1",
+                    "primary-fixed": "#ffdbce",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "secondary": "#c8c6c5",
+                    "on-error": "#690005",
+                    "secondary-fixed": "#e4e2e1",
+                    "inverse-on-surface": "#2f3131",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "surface-bright": "#383939",
+                    "background": "#121414",
+                    "tertiary": "#c6c6c6",
+                    "on-primary-fixed-variant": "#7f2b00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "compact-gap": "4px",
+                    "standard-gap": "8px",
+                    "gutter": "16px",
+                    "unit": "4px",
+                    "panel-padding": "12px",
+                    "margin": "24px"
+            },
+            "fontFamily": {
+                    "data-display": ["JetBrains Mono"],
+                    "code-sm": ["JetBrains Mono"],
+                    "label-sm": ["JetBrains Mono"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "body-md": ["Inter"],
+                    "label-caps": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "data-display": ["28px", {"lineHeight": "1", "letterSpacing": "-0.05em", "fontWeight": "500"}],
+                    "code-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-caps": ["11px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { background-color: #000000; color: #e3e2e2; }
+        .ledger-line { background-image: linear-gradient(to right, #333 1px, transparent 1px); background-size: 40px 100%; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-on-background selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation -->
+<header class="bg-background text-primary font-label-caps text-label-caps w-full border-b border-outline-variant flex justify-between items-center px-gutter py-unit fixed top-0 z-50 h-14">
+<div class="flex items-center gap-standard-gap">
+<span class="material-symbols-outlined text-primary" data-icon="ship">sailing</span>
+<span class="text-headline-md font-headline-md text-primary tracking-tighter">RMS_MONITOR // HULL_01</span>
+</div>
+<div class="flex items-center gap-gutter">
+<div class="flex items-center gap-unit text-primary-container">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span>SYSTEM_LIVE</span>
+</div>
+<button class="hover:bg-surface-container-high transition-colors p-unit rounded active:opacity-80">
+<span class="material-symbols-outlined" data-icon="error">error</span>
+</button>
+</div>
+</header>
+<div class="flex pt-14 pb-16 min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="hidden md:flex flex-col h-full w-64 border-r border-outline-variant bg-surface-container-low py-margin fixed left-0 top-14">
+<nav class="flex flex-col gap-unit px-panel-padding">
+<div class="mb-gutter text-primary font-headline-md font-label-caps uppercase opacity-50 text-[10px]">SEC_00 // MASTER_CONTROL</div>
+<a class="flex items-center gap-gutter px-panel-padding py-standard-gap text-on-surface hover:bg-surface-variant transition-all duration-200 font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                    Vessel Status
+                </a>
+<a class="flex items-center gap-gutter px-panel-padding py-standard-gap bg-primary text-on-primary font-bold transition-all duration-200 font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" data-icon="waves" style="font-variation-settings: 'FILL' 1;">waves</span>
+                    Bilge Systems
+                </a>
+<a class="flex items-center gap-gutter px-panel-padding py-standard-gap text-on-surface hover:bg-surface-variant transition-all duration-200 font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" data-icon="build">build</span>
+                    Maintenance
+                </a>
+<a class="flex items-center gap-gutter px-panel-padding py-standard-gap text-on-surface hover:bg-surface-variant transition-all duration-200 font-label-caps text-label-caps" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    System Config
+                </a>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 p-gutter grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Bilge Schematic Overview (Bento Large) -->
+<section class="lg:col-span-8 bg-surface-container-low border border-outline-variant relative overflow-hidden flex flex-col">
+<header class="bg-surface-container-high px-panel-padding py-unit border-b border-outline-variant flex justify-between items-center">
+<span class="font-label-caps text-label-caps">SEC_04 // BILGE_TOPOLOGY</span>
+<span class="text-primary font-code-sm">REF: HULL_LAYOUT_V2.0</span>
+</header>
+<div class="flex-1 min-h-[400px] flex items-center justify-center bg-surface-container-lowest relative">
+<!-- Technical Grid Background -->
+<div class="absolute inset-0 opacity-10 ledger-line"></div>
+<div class="relative w-full h-full p-gutter flex flex-col justify-center items-center">
+<!-- Structural Hull Outline (Simplified) -->
+<div class="w-4/5 h-24 border-x-2 border-b-2 border-outline opacity-40 rounded-b-xl relative">
+<div class="absolute bottom-0 left-0 w-full h-1/3 bg-primary-container/20 border-t border-primary-container"></div>
+<!-- Sensor Nodes -->
+<div class="absolute -bottom-2 left-1/4 w-3 h-3 bg-primary-container rounded-full ring-4 ring-primary-container/20"></div>
+<div class="absolute -bottom-2 right-1/4 w-3 h-3 bg-on-surface-variant rounded-full ring-4 ring-on-surface-variant/20"></div>
+</div>
+<div class="mt-margin text-center">
+<h2 class="font-headline-lg text-headline-lg text-primary">BILGE_WATER_ALERT</h2>
+<p class="font-label-caps text-label-caps opacity-60">CRITICAL ACCUMULATION DETECTED IN AFT_SECTION_01</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Active Pump Capacity (Bento Small) -->
+<section class="lg:col-span-4 bg-surface-container-low border border-outline-variant flex flex-col">
+<header class="bg-surface-container-high px-panel-padding py-unit border-b border-outline-variant">
+<span class="font-label-caps text-label-caps">SEC_05 // PUMP_THROUGHPUT</span>
+</header>
+<div class="p-panel-padding space-y-gutter">
+<!-- Pump 01 -->
+<div class="space-y-compact-gap">
+<div class="flex justify-between items-end">
+<span class="font-label-caps text-label-caps">PUMP_01 [MAIN]</span>
+<span class="font-data-display text-data-display text-primary">840 <span class="text-label-sm">L/MIN</span></span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest border border-outline-variant overflow-hidden">
+<div class="h-full bg-primary-container w-[85%]"></div>
+</div>
+<div class="flex justify-between text-label-sm font-code-sm opacity-60">
+<span>OPERATIONAL</span>
+<span>MAX 1000 L/MIN</span>
+</div>
+</div>
+<!-- Pump 02 -->
+<div class="space-y-compact-gap">
+<div class="flex justify-between items-end">
+<span class="font-label-caps text-label-caps">PUMP_02 [AUX]</span>
+<span class="font-data-display text-data-display">120 <span class="text-label-sm">L/MIN</span></span>
+</div>
+<div class="h-2 w-full bg-surface-container-highest border border-outline-variant overflow-hidden">
+<div class="h-full bg-on-surface-variant w-[12%]"></div>
+</div>
+<div class="flex justify-between text-label-sm font-code-sm opacity-60">
+<span>STANDBY_LOW</span>
+<span>MAX 1000 L/MIN</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Humidity & Environmental (Bento Medium Wide) -->
+<section class="lg:col-span-6 bg-surface-container-low border border-outline-variant">
+<header class="bg-surface-container-high px-panel-padding py-unit border-b border-outline-variant">
+<span class="font-label-caps text-label-caps">SEC_06 // ATMOSPHERICS</span>
+</header>
+<div class="p-panel-padding grid grid-cols-2 gap-gutter">
+<div class="border-l border-primary-container pl-panel-padding py-unit">
+<p class="font-label-caps text-label-caps opacity-60">HULL_HUMIDITY</p>
+<div class="font-data-display text-data-display text-primary">92%</div>
+<p class="text-label-sm font-code-sm text-primary-container mt-unit">HIGH_VAPOR_WARNING</p>
+</div>
+<div class="border-l border-outline-variant pl-panel-padding py-unit">
+<p class="font-label-caps text-label-caps opacity-60">AMBIENT_TEMP</p>
+<div class="font-data-display text-data-display">24.5°C</div>
+<p class="text-label-sm font-code-sm opacity-60 mt-unit">STABLE</p>
+</div>
+</div>
+</section>
+<!-- Critical Controls (Bento Medium Wide) -->
+<section class="lg:col-span-6 bg-surface-container-low border border-outline-variant">
+<header class="bg-surface-container-high px-panel-padding py-unit border-b border-outline-variant">
+<span class="font-label-caps text-label-caps">SEC_07 // OVERRIDE_CONTROLS</span>
+</header>
+<div class="p-panel-padding flex items-center gap-gutter h-full">
+<button class="flex-1 bg-primary-container text-on-primary-container font-label-caps text-label-caps font-bold py-gutter border border-primary transition-all active:scale-95">
+                        EMERGENCY_FLUSH_ALL
+                    </button>
+<button class="flex-1 border border-outline-variant text-primary font-label-caps text-label-caps font-bold py-gutter hover:bg-surface-container-high transition-all active:scale-95">
+                        MANUAL_PUMP_SYNC
+                    </button>
+</div>
+</section>
+<!-- Sensor Logs (Full Width) -->
+<section class="lg:col-span-12 bg-surface-container-low border border-outline-variant">
+<header class="bg-surface-container-high px-panel-padding py-unit border-b border-outline-variant flex justify-between items-center">
+<span class="font-label-caps text-label-caps">SEC_08 // TELEMETRY_LOGS</span>
+<button class="text-label-sm font-code-sm text-primary">DOWNLOAD_CSV</button>
+</header>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-code-sm">
+<thead class="bg-surface-container border-b border-outline-variant text-label-caps text-on-surface-variant">
+<tr>
+<th class="px-gutter py-standard-gap">TIMESTAMP</th>
+<th class="px-gutter py-standard-gap">SENSOR_ID</th>
+<th class="px-gutter py-standard-gap">STATUS</th>
+<th class="px-gutter py-standard-gap text-right">VALUE</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/30">
+<tr class="hover:bg-primary-container/10 transition-colors">
+<td class="px-gutter py-standard-gap">14:22:05.11</td>
+<td class="px-gutter py-standard-gap">BILGE_AFT_01</td>
+<td class="px-gutter py-standard-gap text-primary-container">LVL_THRESHOLD_EXCEEDED</td>
+<td class="px-gutter py-standard-gap text-right">452 L</td>
+</tr>
+<tr class="hover:bg-primary-container/10 transition-colors">
+<td class="px-gutter py-standard-gap">14:21:59.84</td>
+<td class="px-gutter py-standard-gap">PUMP_01_FEED</td>
+<td class="px-gutter py-standard-gap text-on-surface-variant">OPERATIONAL_IDLE</td>
+<td class="px-gutter py-standard-gap text-right">0 L/MIN</td>
+</tr>
+<tr class="hover:bg-primary-container/10 transition-colors">
+<td class="px-gutter py-standard-gap">14:21:42.33</td>
+<td class="px-gutter py-standard-gap">HUMID_SEC_B</td>
+<td class="px-gutter py-standard-gap text-on-surface-variant">NOMINAL</td>
+<td class="px-gutter py-standard-gap text-right">62%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</main>
+</div>
+<!-- Bottom Navigation Bar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 bg-surface dark:bg-surface border-t border-outline-variant z-50">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant pt-2 pb-1 font-label-caps text-label-caps hover:bg-surface-container transition-colors active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="sensors">sensors</span>
+            SENSORS
+        </a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant pt-2 pb-1 font-label-caps text-label-caps hover:bg-surface-container transition-colors active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="straighten">straighten</span>
+            KEEL
+        </a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary bg-surface-container-highest border-t-2 border-primary pt-2 pb-1 font-label-caps text-label-caps hover:bg-surface-container transition-colors active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="waves" style="font-variation-settings: 'FILL' 1;">waves</span>
+            BILGE
+        </a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant pt-2 pb-1 font-label-caps text-label-caps hover:bg-surface-container transition-colors active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="list_alt">list_alt</span>
+            LOGS
+        </a>
+</nav>
+</body></html>

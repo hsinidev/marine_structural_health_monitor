@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-background": "#e3e2e2",
+                        "on-primary": "#5a1c00",
+                        "outline-variant": "#5b4137",
+                        "tertiary-container": "#949494",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "surface-tint": "#ffb599",
+                        "primary": "#ffb599",
+                        "surface-dim": "#121414",
+                        "inverse-primary": "#a63b00",
+                        "surface-container": "#1e2020",
+                        "on-primary-fixed": "#370e00",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-lowest": "#0d0e0f",
+                        "on-tertiary": "#303030",
+                        "on-secondary-container": "#b6b5b4",
+                        "on-tertiary-container": "#2d2d2d",
+                        "primary-container": "#ff5f00",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "on-secondary-fixed-variant": "#474746",
+                        "outline": "#ab8a7d",
+                        "surface-container-low": "#1a1c1c",
+                        "primary-fixed-dim": "#ffb599",
+                        "surface": "#121414",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "error": "#ffb4ab",
+                        "surface-container-high": "#292a2a",
+                        "secondary-container": "#474746",
+                        "on-primary-container": "#531a00",
+                        "surface-container-highest": "#343535",
+                        "on-secondary": "#303030",
+                        "inverse-surface": "#e3e2e2",
+                        "error-container": "#93000a",
+                        "on-surface": "#e3e2e2",
+                        "on-error-container": "#ffdad6",
+                        "surface-variant": "#343535",
+                        "on-surface-variant": "#e4bfb1",
+                        "primary-fixed": "#ffdbce",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "secondary": "#c8c6c5",
+                        "on-error": "#690005",
+                        "secondary-fixed": "#e4e2e1",
+                        "inverse-on-surface": "#2f3131",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "surface-bright": "#383939",
+                        "background": "#121414",
+                        "tertiary": "#c6c6c6",
+                        "on-primary-fixed-variant": "#7f2b00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "compact-gap": "4px",
+                        "standard-gap": "8px",
+                        "gutter": "16px",
+                        "unit": "4px",
+                        "panel-padding": "12px",
+                        "margin": "24px"
+                    },
+                    "fontFamily": {
+                        "data-display": ["JetBrains Mono"],
+                        "code-sm": ["JetBrains Mono"],
+                        "label-sm": ["JetBrains Mono"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["JetBrains Mono"]
+                    },
+                    "fontSize": {
+                        "data-display": ["28px", {"lineHeight": "1", "letterSpacing": "-0.05em", "fontWeight": "500"}],
+                        "code-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "label-caps": ["11px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .radar-grid {
+            background-image: radial-gradient(circle, #333333 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-gutter py-unit w-full bg-background dark:bg-background border-b border-outline-variant">
+<div class="flex items-center gap-standard-gap">
+<span class="material-symbols-outlined text-primary" data-icon="ship">Chair</span>
+<h1 class="text-headline-md font-headline-md text-primary dark:text-primary tracking-tighter">RMS_MONITOR // HULL_01</h1>
+</div>
+<div class="flex items-center gap-gutter">
+<div class="hidden md:flex gap-standard-gap">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SYS_TIME: 14:22:09</span>
+<span class="font-label-caps text-label-caps text-primary">LAT: 44.31N / LON: 12.55W</span>
+</div>
+<span class="material-symbols-outlined text-primary dark:text-primary active:opacity-80 transition-colors" data-icon="error">error</span>
+</div>
+</header>
+<!-- Critical Alert Banner -->
+<div class="bg-primary-container text-on-primary-container px-gutter py-unit flex items-center justify-between">
+<div class="flex items-center gap-standard-gap">
+<span class="material-symbols-outlined" data-icon="warning" style="font-variation-settings: 'FILL' 1;">warning</span>
+<span class="font-label-caps text-label-caps">CRITICAL_ALERT: SENSOR_SEC_04 // BILGE_HULL_01 // LEAK_DETECTED</span>
+</div>
+<span class="font-label-caps text-label-caps border border-on-primary-container px-2 py-0.5">EST_FLOW: 45L/MIN</span>
+</div>
+<main class="p-gutter pb-24 grid grid-cols-1 md:grid-cols-12 gap-standard-gap max-w-[1600px] mx-auto">
+<!-- Left Column: Vessel Schematic -->
+<section class="md:col-span-4 flex flex-col gap-standard-gap">
+<div class="bg-surface-container-low border border-outline-variant p-panel-padding h-full min-h-[400px] flex flex-col">
+<div class="flex justify-between items-center mb-standard-gap">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SEC_00 // HULL_GEOMETRY</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]" data-icon="view_in_ar">view_in_ar</span>
+</div>
+<div class="flex-grow flex items-center justify-center relative overflow-hidden bg-black/40 radar-grid rounded">
+<!-- Vector Schematic Placeholder -->
+<div class="w-full h-full flex flex-col items-center justify-center p-gutter opacity-80">
+<svg class="w-full h-auto stroke-primary fill-none stroke-[0.5]" viewbox="0 0 200 100">
+<path d="M10 50 Q 100 0 190 50 L 170 90 L 30 90 Z"></path>
+<circle class="fill-primary-container animate-pulse" cx="150" cy="45" r="3"></circle>
+<line class="stroke-primary-container stroke-[0.2]" x1="150" x2="170" y1="45" y2="20"></line>
+</svg>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+<div class="w-[180px] h-[180px] border border-primary/20 rounded-full animate-ping"></div>
+</div>
+</div>
+<div class="absolute bottom-2 left-2 flex flex-col">
+<span class="font-label-caps text-[9px] text-on-surface-variant">ACTIVE_SCAN: ENABLED</span>
+<span class="font-label-caps text-[9px] text-primary">SCAN_FREQ: 144Hz</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Column: Live Telemetry & Radar Charts -->
+<section class="md:col-span-8 flex flex-col gap-standard-gap">
+<!-- Numerical Readouts -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-standard-gap">
+<div class="bg-surface-container border border-outline-variant p-panel-padding flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SEC_01 // PORT</span>
+<div class="flex items-baseline gap-1 mt-unit">
+<span class="font-data-display text-data-display text-primary">242</span>
+<span class="font-label-caps text-on-surface-variant text-[10px]">µε</span>
+</div>
+<div class="h-1 bg-surface-container-highest mt-2 relative">
+<div class="absolute left-0 top-0 h-full bg-primary w-[45%]"></div>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant p-panel-padding flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SEC_02 // STBD</span>
+<div class="flex items-baseline gap-1 mt-unit">
+<span class="font-data-display text-data-display text-primary">188</span>
+<span class="font-label-caps text-on-surface-variant text-[10px]">µε</span>
+</div>
+<div class="h-1 bg-surface-container-highest mt-2 relative">
+<div class="absolute left-0 top-0 h-full bg-primary w-[35%]"></div>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant p-panel-padding flex flex-col border-l-2 border-l-primary-container">
+<span class="font-label-caps text-label-caps text-primary-container">SEC_03 // KEEL</span>
+<div class="flex items-baseline gap-1 mt-unit">
+<span class="font-data-display text-data-display text-primary-container">894</span>
+<span class="font-label-caps text-on-surface-variant text-[10px]">µε</span>
+</div>
+<div class="h-1 bg-surface-container-highest mt-2 relative">
+<div class="absolute left-0 top-0 h-full bg-primary-container w-[89%]"></div>
+</div>
+</div>
+<div class="bg-surface-container border border-outline-variant p-panel-padding flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SEC_04 // STERN</span>
+<div class="flex items-baseline gap-1 mt-unit">
+<span class="font-data-display text-data-display text-primary">312</span>
+<span class="font-label-caps text-on-surface-variant text-[10px]">µε</span>
+</div>
+<div class="h-1 bg-surface-container-highest mt-2 relative">
+<div class="absolute left-0 top-0 h-full bg-primary w-[55%]"></div>
+</div>
+</div>
+</div>
+<!-- Radar (Spider) Charts Bento -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-standard-gap flex-grow">
+<!-- Radar Panel 1 -->
+<div class="bg-surface-container-low border border-outline-variant p-panel-padding flex flex-col">
+<div class="flex justify-between items-center mb-standard-gap">
+<span class="font-label-caps text-label-caps">STRESS_DISTRIBUTION // BOW</span>
+<span class="font-label-caps text-[9px] text-on-surface-variant">TYPE: RADAR_V4</span>
+</div>
+<div class="flex-grow flex items-center justify-center py-gutter">
+<!-- Pseudo Spider Chart -->
+<div class="relative w-48 h-48 border border-outline-variant rounded-full flex items-center justify-center">
+<div class="absolute w-36 h-36 border border-outline-variant/30 rounded-full"></div>
+<div class="absolute w-24 h-24 border border-outline-variant/30 rounded-full"></div>
+<div class="absolute w-12 h-12 border border-outline-variant/30 rounded-full"></div>
+<!-- Spokes -->
+<div class="absolute h-full w-[1px] bg-outline-variant/20"></div>
+<div class="absolute h-full w-[1px] bg-outline-variant/20 rotate-45"></div>
+<div class="absolute h-full w-[1px] bg-outline-variant/20 rotate-90"></div>
+<div class="absolute h-full w-[1px] bg-outline-variant/20 rotate-135"></div>
+<!-- Data Shape -->
+<svg class="absolute w-full h-full drop-shadow-[0_0_8px_rgba(255,181,153,0.3)]" viewbox="0 0 100 100">
+<polygon class="fill-primary/20 stroke-primary stroke-[1.5]" points="50,20 80,40 70,70 30,80 20,40"></polygon>
+</svg>
+</div>
+</div>
+</div>
+<!-- Radar Panel 2 -->
+<div class="bg-surface-container-low border border-outline-variant p-panel-padding flex flex-col">
+<div class="flex justify-between items-center mb-standard-gap">
+<span class="font-label-caps text-label-caps">STRESS_DISTRIBUTION // AFT</span>
+<span class="font-label-caps text-[9px] text-on-surface-variant">TYPE: RADAR_V4</span>
+</div>
+<div class="flex-grow flex items-center justify-center py-gutter">
+<div class="relative w-48 h-48 border border-outline-variant rounded-full flex items-center justify-center">
+<div class="absolute w-36 h-36 border border-outline-variant/30 rounded-full"></div>
+<div class="absolute w-24 h-24 border border-outline-variant/30 rounded-full"></div>
+<div class="absolute w-12 h-12 border border-outline-variant/30 rounded-full"></div>
+<div class="absolute h-full w-[1px] bg-outline-variant/20"></div>
+<div class="absolute h-full w-[1px] bg-outline-variant/20 rotate-45"></div>
+<div class="absolute h-full w-[1px] bg-outline-variant/20 rotate-90"></div>
+<div class="absolute h-full w-[1px] bg-outline-variant/20 rotate-135"></div>
+<svg class="absolute w-full h-full drop-shadow-[0_0_8px_rgba(255,95,0,0.3)]" viewbox="0 0 100 100">
+<polygon class="fill-primary-container/20 stroke-primary-container stroke-[1.5]" points="50,10 90,50 50,90 10,50"></polygon>
+</svg>
+</div>
+</div>
+</div>
+<!-- Detailed Log Table -->
+<div class="md:col-span-2 bg-surface-container-low border border-outline-variant overflow-hidden">
+<div class="px-panel-padding py-2 bg-surface-container-high flex justify-between items-center border-b border-outline-variant">
+<span class="font-label-caps text-label-caps">LIVE_STREAM // RAW_DATA</span>
+<div class="flex gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-caps text-[10px]">SYNC_STABLE</span>
+</div>
+</div>
+<div class="divide-y divide-outline-variant font-code-sm text-code-sm">
+<div class="px-panel-padding py-2 flex justify-between hover:bg-primary/10 transition-colors">
+<span class="text-on-surface-variant">14:22:08.01</span>
+<span class="text-primary">MSG: SEC_03_KEEL: SPIKE_DETECTED (+12%)</span>
+<span class="text-on-surface-variant">CODE: 0x88F</span>
+</div>
+<div class="px-panel-padding py-2 flex justify-between hover:bg-primary/10 transition-colors">
+<span class="text-on-surface-variant">14:22:07.45</span>
+<span>MSG: SYSTEM_CHECK: ALL_SENSORS_GREEN</span>
+<span class="text-on-surface-variant">CODE: 0x000</span>
+</div>
+<div class="px-panel-padding py-2 flex justify-between hover:bg-primary/10 transition-colors">
+<span class="text-on-surface-variant">14:22:06.90</span>
+<span class="text-primary-container">MSG: BILGE_PUMP_01: MANUAL_OVERRIDE_REQUIRED</span>
+<span class="text-on-surface-variant">CODE: 0x44E</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center h-16 bg-surface dark:bg-surface border-t border-outline-variant z-50">
+<!-- SENSORS (Active) -->
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary bg-surface-container-highest border-t-2 border-primary pt-2 pb-1 w-full h-full hover:bg-surface-container transition-colors active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="sensors">sensors</span>
+<span class="font-label-caps text-label-caps">SENSORS</span>
+</a>
+<!-- KEEL -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant pt-2 pb-1 w-full h-full hover:bg-surface-container transition-colors active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="straighten">straighten</span>
+<span class="font-label-caps text-label-caps">KEEL</span>
+</a>
+<!-- BILGE -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant pt-2 pb-1 w-full h-full hover:bg-surface-container transition-colors active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="waves">waves</span>
+<span class="font-label-caps text-label-caps">BILGE</span>
+</a>
+<!-- LOGS -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant pt-2 pb-1 w-full h-full hover:bg-surface-container transition-colors active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="list_alt">list_alt</span>
+<span class="font-label-caps text-label-caps">LOGS</span>
+</a>
+</nav>
+<!-- Floating Background Image Element -->
+<div class="fixed top-0 left-0 w-full h-full pointer-events-none opacity-[0.03] z-[-1]">
+<img class="w-full h-full object-cover grayscale" data-alt="A high-tech industrial maritime bridge control center at night, featuring glowing orange digital monitors and tactical grid displays. The lighting is low and moody, emphasizing the graphite and black surfaces of the technical equipment. The aesthetic is focused on precision engineering, rugged naval architecture, and structural monitoring interfaces with a dark-mode industrial palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsD_e2O-Gn5z1Xk8UOL2DfB907mseFihqEcXibO4lzer1V_ohE0FQeqSWFYmLrKvive0h4ZjZI6vcVvf-R08hCI_razGD4UNo0j7IeILaImvN0IqBedRqDSKcM7pk6Ztfw3cKhMVD6-G7uIV1CvguZF8SVACoTY7edAdUb_lP4eJ3Pmsw-nA-Uk6ferExehm8YFFaBAk3ZyY2awW_KxDst8ZewAsUYDpdl9C3WF6xkEK8LxHgVOyRym4rLP-RcDyo_gM_V8UaSnzgg"/>
+</div>
+</body></html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RMS_MONITOR // AUTH_ACCESS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary": "#ffb599",
+                      "on-tertiary": "#303030",
+                      "on-primary-fixed-variant": "#7f2b00",
+                      "on-secondary-container": "#b6b5b4",
+                      "tertiary-fixed-dim": "#c6c6c6",
+                      "on-surface": "#e3e2e2",
+                      "surface-container-lowest": "#0d0e0f",
+                      "secondary-container": "#474746",
+                      "surface-tint": "#ffb599",
+                      "surface-container-low": "#1a1c1c",
+                      "inverse-surface": "#e3e2e2",
+                      "secondary": "#c8c6c5",
+                      "on-tertiary-container": "#2d2d2d",
+                      "on-secondary-fixed": "#1b1c1c",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "background": "#121414",
+                      "primary-container": "#ff5f00",
+                      "error-container": "#93000a",
+                      "tertiary-container": "#949494",
+                      "on-secondary-fixed-variant": "#474746",
+                      "on-surface-variant": "#e4bfb1",
+                      "on-primary": "#5a1c00",
+                      "surface-bright": "#383939",
+                      "tertiary-fixed": "#e2e2e2",
+                      "on-error": "#690005",
+                      "primary-fixed-dim": "#ffb599",
+                      "on-tertiary-fixed": "#1b1b1b",
+                      "surface-container": "#1e2020",
+                      "secondary-fixed": "#e4e2e1",
+                      "surface-dim": "#121414",
+                      "tertiary": "#c6c6c6",
+                      "surface-container-highest": "#343535",
+                      "on-primary-container": "#531a00",
+                      "outline-variant": "#5b4137",
+                      "on-secondary": "#303030",
+                      "outline": "#ab8a7d",
+                      "surface-variant": "#343535",
+                      "inverse-primary": "#a63b00",
+                      "on-background": "#e3e2e2",
+                      "error": "#ffb4ab",
+                      "surface-container-high": "#292a2a",
+                      "surface": "#121414",
+                      "on-primary-fixed": "#370e00",
+                      "on-tertiary-fixed-variant": "#474747",
+                      "on-error-container": "#ffdad6",
+                      "primary-fixed": "#ffdbce",
+                      "inverse-on-surface": "#2f3131"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "compact-gap": "4px",
+                      "margin": "24px",
+                      "panel-padding": "12px",
+                      "standard-gap": "8px",
+                      "gutter": "16px",
+                      "unit": "4px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Hanken Grotesk"],
+                      "label-sm": ["JetBrains Mono"],
+                      "headline-lg": ["Hanken Grotesk"],
+                      "body-md": ["Inter"],
+                      "data-display": ["JetBrains Mono"],
+                      "code-sm": ["JetBrains Mono"],
+                      "label-caps": ["JetBrains Mono"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                      "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                      "data-display": ["28px", {"lineHeight": "1", "letterSpacing": "-0.05em", "fontWeight": "500"}],
+                      "code-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                      "label-caps": ["11px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scanline {
+            background: linear-gradient(to bottom, transparent 50%, rgba(255, 181, 153, 0.05) 50%);
+            background-size: 100% 4px;
+        }
+        .orange-glow {
+            box-shadow: 0 0 15px rgba(255, 95, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen overflow-x-hidden flex flex-col">
+<header class="flex justify-between items-center px-gutter py-unit w-full border-b border-outline-variant bg-background">
+<div class="flex items-center gap-standard-gap">
+<span class="material-symbols-outlined text-primary" data-icon="ship">Chair</span>
+<span class="text-headline-md font-headline-md text-primary tracking-tighter">RMS_MONITOR // HULL_01</span>
+</div>
+<div class="flex items-center gap-standard-gap">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SYS_READY</span>
+<span class="material-symbols-outlined text-primary" data-icon="error">error</span>
+</div>
+</header>
+<main class="flex-grow flex flex-col md:flex-row">
+<section class="hidden md:flex md:w-1/2 relative bg-surface-container-lowest border-r border-outline-variant items-center justify-center overflow-hidden">
+<div class="absolute inset-0 scanline opacity-30"></div>
+<div class="absolute top-margin left-margin z-10 flex flex-col gap-unit">
+<span class="font-label-caps text-label-caps text-primary">SEC_ID // 00_CORE</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">GEO_COORD // 43.7384° N, 7.4246° E</span>
+</div>
+<div class="z-10 text-center px-margin max-w-lg">
+<h1 class="font-headline-lg text-headline-lg text-primary mb-standard-gap uppercase tracking-tight">Marine Structural Intelligence</h1>
+<p class="font-body-md text-on-surface-variant mb-margin">Predictive hull stress monitoring and real-time structural integrity telemetry for high-tonnage vessels. Access Restricted.</p>
+<div class="border border-outline-variant p-panel-padding bg-surface-container-low relative">
+<div class="flex justify-between items-center mb-unit">
+<span class="font-label-caps text-label-caps text-on-tertiary-container">SENSORS_ACTIVE</span>
+<div class="w-2 h-2 rounded-full bg-primary-container orange-glow"></div>
+</div>
+<img class="w-full h-48 object-cover grayscale opacity-80 border border-outline-variant" data-alt="A technical blueprint of a massive yacht hull structure rendered in deep graphite and safety orange. The image shows complex wireframe models of bulkheads and structural ribs with digital telemetry overlays and glowing data points. The lighting is low-key, professional, and industrial, emphasizing maritime engineering precision and structural monitoring technology." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEYREeknZmQ4KyQn08SOkua1SIgSWYy519orCJuX3FZYSq4xBGb8CdHD-xTUJWDEbC50paPqn9zKqRx0IoJZ5dvG5FCSF2yUnXkNBThUUuqhgXpVwwwp0iNCCP7ETkuv6ADfCmRJl7GZ4T8kYGPV_X3oMKeWmHaqrkJnnPYCPdthog2RZC69lieOhCtgYF4SLP9pxRiAomuuLBim0Lde_FstR45ithz6JK32Yi-u24ZVOEzMAKi2ss_v8Ej-v24nGCxsV2l1ITpPZc"/>
+<div class="mt-standard-gap flex justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">LOAD_FACTOR</span>
+<span class="font-data-display text-data-display text-primary">0.82 G</span>
+</div>
+<div class="flex flex-col text-right">
+<span class="font-label-caps text-label-caps text-on-surface-variant">TEMP_CORE</span>
+<span class="font-data-display text-data-display text-primary">24.5°C</span>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-margin right-margin z-10 text-right">
+<span class="font-label-caps text-label-caps text-on-surface-variant block">ENCRYPTION // AES_256</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant block">V_NUM // 4.9.1-BETA</span>
+</div>
+</section>
+<section class="flex-grow flex flex-col justify-center items-center px-margin py-margin bg-background">
+<div class="w-full max-w-md">
+<div class="flex border-b border-outline-variant mb-margin">
+<button class="flex-1 py-unit font-label-caps text-label-caps text-primary border-b-2 border-primary-container transition-colors">SIGN_IN</button>
+<button class="flex-1 py-unit font-label-caps text-label-caps text-on-surface-variant hover:bg-surface-container transition-colors">REGISTER</button>
+</div>
+<div class="space-y-gutter">
+<div class="relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-compact-gap">USER_IDENTITY</label>
+<input class="w-full bg-transparent border-0 border-b border-outline outline-none text-on-surface font-label-caps text-label-caps py-unit focus:border-primary-container transition-colors placeholder:text-on-surface-variant/30" placeholder="FULL_NAME" type="text"/>
+</div>
+<div class="relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-compact-gap">COMMS_CHANNEL</label>
+<input class="w-full bg-transparent border-0 border-b border-outline outline-none text-on-surface font-label-caps text-label-caps py-unit focus:border-primary-container transition-colors placeholder:text-on-surface-variant/30" placeholder="EMAIL_ADDRESS" type="email"/>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-compact-gap">VESSEL_ID</label>
+<input class="w-full bg-transparent border-0 border-b border-outline outline-none text-on-surface font-label-caps text-label-caps py-unit focus:border-primary-container transition-colors placeholder:text-on-surface-variant/30" placeholder="HULL_SERIAL" type="text"/>
+</div>
+<div class="relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-compact-gap">ACCESS_ROLE</label>
+<select class="w-full bg-transparent border-0 border-b border-outline outline-none text-on-surface font-label-caps text-label-caps py-unit focus:border-primary-container transition-colors appearance-none">
+<option class="bg-surface-container">ENGINEER</option>
+<option class="bg-surface-container">CAPTAIN</option>
+<option class="bg-surface-container">OS_TECH</option>
+<option class="bg-surface-container">OWNER</option>
+</select>
+</div>
+</div>
+<div class="relative">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-compact-gap">PASS_SEQUENCE</label>
+<input class="w-full bg-transparent border-0 border-b border-outline outline-none text-on-surface font-label-caps text-label-caps py-unit focus:border-primary-container transition-colors placeholder:text-on-surface-variant/30" placeholder="••••••••••••" type="password"/>
+</div>
+<div class="pt-margin">
+<button class="w-full bg-primary-container text-on-primary py-gutter font-label-caps text-label-caps font-bold tracking-widest active:opacity-80 transition-all hover:brightness-110 flex items-center justify-center gap-standard-gap">
+                            INITIALIZE_SESSION
+                            <span class="material-symbols-outlined text-sm" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+<div class="flex justify-between items-center mt-standard-gap">
+<label class="flex items-center gap-compact-gap cursor-pointer">
+<input class="w-4 h-4 bg-surface-container border-outline text-primary-container focus:ring-0 rounded-none" type="checkbox"/>
+<span class="font-label-caps text-[9px] text-on-surface-variant">PERSIST_CREDENTIALS</span>
+</label>
+<a class="font-label-caps text-[9px] text-primary hover:underline" href="#">FORGOT_SEQUENCE?</a>
+</div>
+</div>
+<div class="mt-margin pt-margin border-t border-outline-variant">
+<p class="font-label-caps text-label-caps text-on-surface-variant text-center opacity-60">AUTHORIZED ACCESS ONLY. ALL SESSIONS ARE TELEMETRICALLY LOGGED AND TRACED TO OPERATOR ID.</p>
+</div>
+</div>
+</section>
+</main>
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-16 bg-surface border-t border-outline-variant z-50">
+<div class="flex flex-col items-center justify-center text-primary bg-surface-container-highest border-t-2 border-primary pt-2 pb-1 transition-colors">
+<span class="material-symbols-outlined" data-icon="sensors">sensors</span>
+<span class="font-label-caps text-label-caps">SENSORS</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant pt-2 pb-1 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="straighten">straighten</span>
+<span class="font-label-caps text-label-caps">KEEL</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant pt-2 pb-1 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="waves">waves</span>
+<span class="font-label-caps text-label-caps">BILGE</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant pt-2 pb-1 hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="list_alt">list_alt</span>
+<span class="font-label-caps text-label-caps">LOGS</span>
+</div>
+</nav>
+</body></html>

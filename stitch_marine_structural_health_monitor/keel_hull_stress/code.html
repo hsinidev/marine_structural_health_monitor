@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-background": "#e3e2e2",
+                    "on-primary": "#5a1c00",
+                    "outline-variant": "#5b4137",
+                    "tertiary-container": "#949494",
+                    "on-tertiary-fixed": "#1b1b1b",
+                    "surface-tint": "#ffb599",
+                    "primary": "#ffb599",
+                    "surface-dim": "#121414",
+                    "inverse-primary": "#a63b00",
+                    "surface-container": "#1e2020",
+                    "on-primary-fixed": "#370e00",
+                    "tertiary-fixed": "#e2e2e2",
+                    "surface-container-lowest": "#0d0e0f",
+                    "on-tertiary": "#303030",
+                    "on-secondary-container": "#b6b5b4",
+                    "on-tertiary-container": "#2d2d2d",
+                    "primary-container": "#ff5f00",
+                    "tertiary-fixed-dim": "#c6c6c6",
+                    "on-secondary-fixed-variant": "#474746",
+                    "outline": "#ab8a7d",
+                    "surface-container-low": "#1a1c1c",
+                    "primary-fixed-dim": "#ffb599",
+                    "surface": "#121414",
+                    "on-tertiary-fixed-variant": "#474747",
+                    "error": "#ffb4ab",
+                    "surface-container-high": "#292a2a",
+                    "secondary-container": "#474746",
+                    "on-primary-container": "#531a00",
+                    "surface-container-highest": "#343535",
+                    "on-secondary": "#303030",
+                    "inverse-surface": "#e3e2e2",
+                    "error-container": "#93000a",
+                    "on-surface": "#e3e2e2",
+                    "on-error-container": "#ffdad6",
+                    "surface-variant": "#343535",
+                    "on-surface-variant": "#e4bfb1",
+                    "primary-fixed": "#ffdbce",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "secondary": "#c8c6c5",
+                    "on-error": "#690005",
+                    "secondary-fixed": "#e4e2e1",
+                    "inverse-on-surface": "#2f3131",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "surface-bright": "#383939",
+                    "background": "#121414",
+                    "tertiary": "#c6c6c6",
+                    "on-primary-fixed-variant": "#7f2b00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "compact-gap": "4px",
+                    "standard-gap": "8px",
+                    "gutter": "16px",
+                    "unit": "4px",
+                    "panel-padding": "12px",
+                    "margin": "24px"
+            },
+            "fontFamily": {
+                    "data-display": ["JetBrains Mono"],
+                    "code-sm": ["JetBrains Mono"],
+                    "label-sm": ["JetBrains Mono"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "body-md": ["Inter"],
+                    "label-caps": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "data-display": ["28px", {"lineHeight": "1", "letterSpacing": "-0.05em", "fontWeight": "500"}],
+                    "code-sm": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-caps": ["11px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #121414;
+            color: #e3e2e2;
+        }
+        .hull-mesh {
+            background: linear-gradient(rgba(255, 95, 0, 0.05) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255, 95, 0, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md mb-16">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background text-primary dark:text-primary border-b border-outline-variant flex justify-between items-center px-gutter py-unit w-full sticky top-0 z-50">
+<div class="flex items-center gap-standard-gap">
+<span class="material-symbols-outlined" data-icon="ship">Chair</span>
+<h1 class="text-headline-md font-headline-md text-primary dark:text-primary tracking-tighter">RMS_MONITOR // HULL_01</h1>
+</div>
+<div class="flex items-center gap-standard-gap">
+<span class="font-label-caps text-label-caps">SYS_READY</span>
+<span class="material-symbols-outlined text-error" data-icon="error">error</span>
+</div>
+</header>
+<main class="p-gutter max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left Column: 3D Stress Heatmap -->
+<section class="md:col-span-8 space-y-gutter">
+<div class="bg-surface-container-low border border-outline-variant relative overflow-hidden">
+<div class="flex justify-between items-center px-panel-padding py-unit bg-surface-container-high border-b border-outline-variant">
+<span class="font-label-caps text-label-caps">SEC_01 // HULL_STRESS_HEATMAP</span>
+<span class="font-label-caps text-label-caps text-primary">LIVE_TELEMETRY</span>
+</div>
+<!-- Heatmap Visualization Area -->
+<div class="h-[450px] relative hull-mesh flex items-center justify-center p-gutter">
+<img alt="Hull Analysis" class="w-full h-full object-contain mix-blend-lighten opacity-80" data-alt="A technical 3D wireframe schematic of a luxury yacht's hull viewed from below, rendered in a high-contrast industrial style. The background is a deep graphite black with a faint glowing grid. Key structural areas near the keel are highlighted with intense safety orange pulses representing high-stress heatmap zones. The lighting is clinical and sharp, emphasizing the surgical precision of the naval engineering analysis. The overall aesthetic is digital, rugged, and professional, consistent with a high-stakes maritime monitoring interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAJ6tdOXaiZPMdCqHp7G4FyiOmtvicxnqgvubw5klQj9H6XKajIBSuVmsxW9aQXMPijvnkkg_d5mWy_XoyZ7Cuy7vvxljeV2xtVSEXAAd096yTVmfxmZ-Kln67WScBBUELhftP8TJcweKzozHQ7tSb1tSsZol83uBLZuP6_EyVZXue6hYaGthkQefoHQbnoCHiFT12IEL_pejkbgWbOPIZgG6sfCj9cEeFOTXkxlUA5bYROYTaO5BW9oIzKdDK7_T224UWlbxEXZn2"/>
+<!-- Overlay Telemetry -->
+<div class="absolute top-gutter right-gutter space-y-2">
+<div class="bg-black/80 border border-primary-container p-2">
+<div class="font-label-caps text-label-caps text-primary mb-1">STRESS_LOAD</div>
+<div class="font-data-display text-data-display text-primary-container">84.2<span class="text-label-sm">kN/m²</span></div>
+</div>
+<div class="bg-black/80 border border-outline-variant p-2">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">HULL_TEMP</div>
+<div class="font-data-display text-data-display">14.8<span class="text-label-sm">°C</span></div>
+</div>
+</div>
+<!-- Scan Line Overlay -->
+<div class="absolute inset-0 pointer-events-none bg-gradient-to-b from-transparent via-primary-container/5 to-transparent h-20 w-full animate-pulse top-1/4"></div>
+</div>
+<div class="grid grid-cols-3 border-t border-outline-variant">
+<div class="p-panel-padding border-r border-outline-variant">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">X_AXIS_VIBE</div>
+<div class="h-1 bg-secondary-container w-full">
+<div class="h-full bg-primary" style="width: 35%"></div>
+</div>
+</div>
+<div class="p-panel-padding border-r border-outline-variant">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Y_AXIS_VIBE</div>
+<div class="h-1 bg-secondary-container w-full">
+<div class="h-full bg-primary-container" style="width: 72%"></div>
+</div>
+</div>
+<div class="p-panel-padding">
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Z_AXIS_VIBE</div>
+<div class="h-1 bg-secondary-container w-full">
+<div class="h-full bg-primary" style="width: 12%"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Right Column: Keel-Bolt Readings & Actions -->
+<section class="md:col-span-4 space-y-gutter">
+<!-- Keel Bolt List -->
+<div class="bg-surface-container-low border border-outline-variant">
+<div class="flex justify-between items-center px-panel-padding py-unit bg-surface-container-high border-b border-outline-variant">
+<span class="font-label-caps text-label-caps">SEC_02 // KEEL_BOLT_TENSION</span>
+<span class="material-symbols-outlined text-[14px]" data-icon="straighten">straighten</span>
+</div>
+<div class="divide-y divide-outline-variant">
+<!-- Bolt Row 01 -->
+<div class="p-panel-padding flex items-center justify-between hover:bg-primary-container/10 transition-colors group">
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">BOLT_01_FWD</div>
+<div class="font-data-display text-[20px] text-on-surface">115.4 <span class="text-label-sm">Nm</span></div>
+</div>
+<div class="flex items-center gap-standard-gap">
+<span class="font-label-caps text-label-caps text-primary">OK</span>
+<div class="w-2 h-2 bg-primary shadow-[0_0_8px_rgba(255,181,153,0.6)]"></div>
+</div>
+</div>
+<!-- Bolt Row 02 -->
+<div class="p-panel-padding flex items-center justify-between hover:bg-primary-container/10 transition-colors group bg-error-container/5">
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">BOLT_02_FWD</div>
+<div class="font-data-display text-[20px] text-error">92.1 <span class="text-label-sm">Nm</span></div>
+</div>
+<div class="flex items-center gap-standard-gap">
+<span class="font-label-caps text-label-caps text-error">RE-TORQUE</span>
+<div class="w-2 h-2 bg-error animate-pulse shadow-[0_0_8px_rgba(255,180,171,0.6)]"></div>
+</div>
+</div>
+<!-- Bolt Row 03 -->
+<div class="p-panel-padding flex items-center justify-between hover:bg-primary-container/10 transition-colors group">
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">BOLT_03_MID</div>
+<div class="font-data-display text-[20px] text-on-surface">118.9 <span class="text-label-sm">Nm</span></div>
+</div>
+<div class="flex items-center gap-standard-gap">
+<span class="font-label-caps text-label-caps text-primary">OK</span>
+<div class="w-2 h-2 bg-primary"></div>
+</div>
+</div>
+<!-- Bolt Row 04 -->
+<div class="p-panel-padding flex items-center justify-between hover:bg-primary-container/10 transition-colors group">
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">BOLT_04_MID</div>
+<div class="font-data-display text-[20px] text-on-surface">114.2 <span class="text-label-sm">Nm</span></div>
+</div>
+<div class="flex items-center gap-standard-gap">
+<span class="font-label-caps text-label-caps text-primary">OK</span>
+<div class="w-2 h-2 bg-primary"></div>
+</div>
+</div>
+<!-- Bolt Row 05 -->
+<div class="p-panel-padding flex items-center justify-between hover:bg-primary-container/10 transition-colors group">
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">BOLT_05_AFT</div>
+<div class="font-data-display text-[20px] text-on-surface">116.7 <span class="text-label-sm">Nm</span></div>
+</div>
+<div class="flex items-center gap-standard-gap">
+<span class="font-label-caps text-label-caps text-primary">OK</span>
+<div class="w-2 h-2 bg-primary"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Area -->
+<div class="space-y-standard-gap">
+<button class="w-full bg-primary-container text-on-primary-container font-label-caps text-label-caps py-4 flex items-center justify-center gap-standard-gap active:opacity-80 transition-all">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+                    CALL MARINE ENGINEER
+                </button>
+<button class="w-full border border-outline-variant text-primary font-label-caps text-label-caps py-4 hover:bg-surface-container-high transition-colors active:scale-95 duration-100 uppercase">
+                    Export Technical Log (.txt)
+                </button>
+</div>
+<!-- Engineer Status Card -->
+<div class="bg-surface-container border border-outline-variant p-panel-padding">
+<div class="flex items-center gap-gutter">
+<img alt="Engineer" class="w-12 h-12 grayscale border border-outline-variant" data-alt="A close-up portrait of a professional maritime structural engineer in a graphite-grey uniform. The lighting is dramatic and low-key, typical of a ship's engine room or control center. The color palette is restricted to blacks, greys, and a single orange safety patch on the shoulder. The engineer has an authoritative, focused expression, emphasizing reliability and technical expertise in a high-stakes environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHrPS2bpgsUNDy71OPkjku6LhDTBcowKxcytO-Ja86gxxI-d1yyEpPtAko_x8Shy0bxKmQQDDEtsFUX1dMPgoKn8jLAXJhS4y6BExEwMZ6H8_9hDHTBQAzvvgIboujLOhBglEt2cTpihAFm1l_C_fZfKpc2clSvJjbEKhXUeBkLl89ftvpHixifrPy-bevLfKpsVxcO0tpB5dfHfyMQw6hG0kxgAH-i-aUixUW9z6g9L95lVxhi7VEJklfKKHCih443BxM7_d8j2qg"/>
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">CHIEF_ENGINEER</div>
+<div class="font-body-md font-bold text-on-surface">MARCUS_VANCE</div>
+<div class="flex items-center gap-1">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="text-label-sm text-primary uppercase">On Watch</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile & Tablet Focus) -->
+<nav class="fixed bottom-0 left-0 w-full bg-surface dark:bg-surface flex justify-around items-center h-16 border-t border-outline-variant z-50">
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant pt-2 pb-1 hover:bg-surface-container transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="sensors">sensors</span>
+<span class="font-label-caps text-label-caps">SENSORS</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary bg-surface-container-highest border-t-2 border-primary pt-2 pb-1 transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="straighten">straighten</span>
+<span class="font-label-caps text-label-caps">KEEL</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant pt-2 pb-1 hover:bg-surface-container transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="waves">waves</span>
+<span class="font-label-caps text-label-caps">BILGE</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-surface-variant pt-2 pb-1 hover:bg-surface-container transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined" data-icon="list_alt">list_alt</span>
+<span class="font-label-caps text-label-caps">LOGS</span>
+</button>
+</nav>
+</body></html>
